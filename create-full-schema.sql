@@ -65,8 +65,8 @@ CREATE TABLE IF NOT EXISTS `music_collection`.`artists_styles` (
   `artist_id` BIGINT(20) UNSIGNED NOT NULL COMMENT 'Name of the artist or band.',
   `style_id` BIGINT(20) UNSIGNED NOT NULL COMMENT 'Style identificator.',
   PRIMARY KEY (`artist_id`, `style_id`),
-  INDEX `artists_styles_fk_styles_1_idx` (`style_id` ASC) VISIBLE,
-  INDEX `artists_styles_fk_artists_1_idx` (`artist_id` ASC) VISIBLE,
+  INDEX `artists_styles_fk_styles_1_idx` (`style_id` ASC),
+  INDEX `artists_styles_fk_artists_1_idx` (`artist_id` ASC),
   CONSTRAINT `artists_styles_fk_artists_1`
     FOREIGN KEY (`artist_id`)
     REFERENCES `music_collection`.`artists` (`id`)
@@ -89,8 +89,8 @@ CREATE TABLE IF NOT EXISTS `music_collection`.`artists_people` (
   `artist_id` BIGINT(20) UNSIGNED NOT NULL COMMENT 'Artist or band identificator.',
   `people_id` BIGINT(20) UNSIGNED NOT NULL COMMENT 'People identificator.',
   PRIMARY KEY (`artist_id`, `people_id`),
-  INDEX `artists_people_fk_people_1_idx` (`people_id` ASC) VISIBLE,
-  INDEX `artists_people_fk_artists_1_idx` (`artist_id` ASC) VISIBLE,
+  INDEX `artists_people_fk_people_1_idx` (`people_id` ASC),
+  INDEX `artists_people_fk_artists_1_idx` (`artist_id` ASC),
   CONSTRAINT `artists_people_fk_artists_1`
     FOREIGN KEY (`artist_id`)
     REFERENCES `music_collection`.`artists` (`id`)
@@ -113,8 +113,8 @@ CREATE TABLE IF NOT EXISTS `music_collection`.`related_artists` (
   `artist_id` BIGINT(20) UNSIGNED NOT NULL COMMENT 'Name of the artist or band.',
   `related_artist_id` BIGINT(20) UNSIGNED NOT NULL COMMENT 'Name of the artist or band related to.',
   PRIMARY KEY (`artist_id`, `related_artist_id`),
-  INDEX `related_artists_fk_artists_2_idx` (`related_artist_id` ASC) VISIBLE,
-  INDEX `related_artists_fk_artists_1_idx` (`artist_id` ASC) VISIBLE,
+  INDEX `related_artists_fk_artists_2_idx` (`related_artist_id` ASC),
+  INDEX `related_artists_fk_artists_1_idx` (`artist_id` ASC),
   CONSTRAINT `related_artists_fk_artists_1`
     FOREIGN KEY (`artist_id`)
     REFERENCES `music_collection`.`artists` (`id`)
