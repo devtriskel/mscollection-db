@@ -1,2 +1,3 @@
-# mscollection-db
-Music Collection Database
+## Music Collection Database
+
+![ER diagram](./ER-model.jpg)

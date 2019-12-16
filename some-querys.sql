@@ -4,8 +4,7 @@
 SELECT
 	art.name AS artist
 FROM music_collection.people AS plp
-INNER JOIN music_collection.artists_people AS apl ON (apl.people_id = plp.id)
-INNER JOIN music_collection.artists AS art ON (art.id = apl.artist_id)
+INNER JOIN music_collection.artists AS art ON (art.id = plp.artist_id)
 WHERE
 	plp.name = 'Jimmy Page';
 
