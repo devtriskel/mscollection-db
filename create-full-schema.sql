@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `music_collection`.`people` (
   CONSTRAINT `people_fk_artists_1`
     FOREIGN KEY (`artist_id`)
     REFERENCES `music_collection`.`artists` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE SET NULL
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
